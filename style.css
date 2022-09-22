@@ -1,0 +1,51 @@
+:root {
+    /* COLORS */
+
+    --color-bg: hsl(220, 13%, 95%);
+    --color-dark-blue: hsl(214, 39%, 28%);
+    --color-light-blue: hsl(211, 36%, 77%);
+    --color-light-grey: hsl(220, 13%, 95%);
+    --color-dark-grey: hsl(40, 6%, 79%);
+    --color-font-regular: hsl(231, 41%, 7%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Archia", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--color-font-regular);
+
+    background-color: var(--color-bg);
+}
+
+header {
+    height: 7rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 7rem;
+}
+
+.logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
