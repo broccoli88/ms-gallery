@@ -34,11 +34,11 @@ body {
 }
 
 header {
-    padding: 3rem 2.5rem 2rem;
+    padding: 3rem 0 2rem 2.5rem;
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 
     position: relative;
 }
@@ -59,14 +59,24 @@ header {
 /* MENU ICON */
 
 .menu {
+    margin-left: auto;
+
     width: 20px;
     height: 16px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
 
     cursor: pointer;
+    z-index: 9;
+
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+
+    transform: translateY(-50%);
 }
 
 .burger {
@@ -81,6 +91,7 @@ header {
 
 .line-1-shift {
     transform: translateX(5px) rotate(45deg) translateY(10px);
+    background-color: var(--color-light-grey);
 }
 
 .line-2-shift {
@@ -89,6 +100,7 @@ header {
 
 .line-3-shift {
     transform: translateX(5px) rotate(-45deg) translateY(-10px);
+    background-color: var(--color-light-grey);
 }
 
 .info {
@@ -118,6 +130,89 @@ header {
     color: var(--color-light-grey);
 }
 
+/* NAVIGATION */
+
 nav {
+    position: absolute;
+    width: 300px;
+    top: 3rem;
+    right: 0;
+    z-index: 8;
+
+    padding: 5rem 0 2rem;
+
+    background-color: var(--color-dark-blue);
+
     display: none;
+}
+
+.nav-on {
+    display: block;
+}
+
+/* MAIN NAV & SUB NAV & SUB SUB NAV*/
+
+.nav-main,
+.nav-sub,
+.nav-subsub {
+    list-style: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.nav-main__item,
+.nav-sub__item,
+.nav-subsub__item {
+    display: flex;
+}
+
+.nav-main__link,
+.nav-sub__link,
+.nav-subsub__link {
+    width: 100%;
+
+    padding: 0.5em 1em;
+
+    text-decoration: none;
+    color: var(--color-light-grey);
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+.nav-main__link:hover,
+.nav-sub__link:hover,
+.nav-subsub__link:hover {
+    color: var(--color-dark-grey);
+}
+
+.nav-main .nav-main__item:first-child,
+.nav-sub .nav-sub__item:nth-child(5),
+.nav-sub .nav-sub__item:nth-child(6),
+.nav-sub .nav-sub__item:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-sub {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.nav-sub__item {
+    background-color: hsl(214, 38%, 38%);
+}
+
+.nav-subsub {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+
+.nav-subsub__item {
+    background-color: hsl(214, 38%, 48%);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
 }
