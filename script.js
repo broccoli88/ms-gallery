@@ -1,15 +1,34 @@
-// Menu icon shape shift
+function toggleMenu() {
+    const navbar = document.querySelector(".navbar");
+    const openMenuIcon = document.querySelector(".menu");
+    const closeMenuIcon = document.querySelector(".close-icon");
 
-const menu = document.querySelector(".menu");
-const lineOne = document.querySelector(".b-1");
-const lineTwo = document.querySelector(".b-2");
-const lineThree = document.querySelector(".b-3");
-const nav = document.querySelector("nav");
+    let isMenuOpen = false;
 
-menu.addEventListener("click", () => {
-    lineOne.classList.toggle("line-1-shift");
-    lineTwo.classList.toggle("line-2-shift");
-    lineThree.classList.toggle("line-3-shift");
+    function openMenu() {
+        if (isMenuOpen === false) {
+            isMenuOpen = true;
+            navbar.style.display = "flex";
+        }
+        return;
+    }
 
-    nav.classList.toggle("nav-on");
-});
+    function closeMenu() {
+        if (isMenuOpen === true) {
+            isMenuOpen = false;
+            navbar.style.display = "none";
+        }
+        return;
+    }
+
+    if (window.innerWidth > 900) return;
+
+    openMenuIcon.addEventListener("click", () => {
+        openMenu();
+    });
+    closeMenuIcon.addEventListener("click", () => {
+        closeMenu();
+    });
+}
+
+toggleMenu();
