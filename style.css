@@ -145,6 +145,10 @@ header {
     background-color: var(--color-dark-blue);
 }
 
+.navbar-opened {
+    display: flex;
+}
+
 .nav {
     padding: var(--padding-mobile-frame);
 
