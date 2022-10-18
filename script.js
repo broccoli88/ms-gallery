@@ -1,3 +1,5 @@
+// ! NAVBAR
+
 const navbar = document.querySelector(".navbar");
 const openMenuIcon = document.querySelector(".menu");
 const closeMenuIcon = document.querySelector(".close-icon");
@@ -27,3 +29,29 @@ window.addEventListener("resize", () => {
         navbar.classList.remove("navbar-opened");
     }
 });
+
+// !HERO
+
+const word = document.querySelector(".text-bold");
+const wordArray = [
+    "adventure",
+    "picture",
+    "design",
+    "animation",
+    "creation",
+    "mix",
+];
+
+let count = 0;
+
+function swapWords() {
+    count++;
+
+    if (count >= wordArray.length) {
+        count = 0;
+    }
+
+    word.textContent = wordArray[count];
+}
+
+setInterval(swapWords, 3000);

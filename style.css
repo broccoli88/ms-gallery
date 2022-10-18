@@ -52,6 +52,9 @@ body {
     line-height: 1.5;
     color: var(--color-font-regular);
 }
+
+/* ! . . . : : : [ HEADER ] : : : . . .  */
+
 header {
     padding: var(--padding-mobile-frame);
 
@@ -338,4 +341,29 @@ header {
     .sub__item-wydarzenia:hover > .nav-sub-sub-wydarzenia {
         height: 26.5rem;
     }
+}
+
+/* ! . . . : : : [ MAIN ] : : : . . .  */
+
+.hero {
+    width: 100vw;
+    height: calc(100vh - 13rem);
+
+    background-image: url("./assets/hero.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--color-light-grey);
+
+    gap: 2rem;
+}
+
+.hero__text {
+    font-size: clamp(4rem, 6vw, 8rem);
+}
+
+.text-bold {
+    font-weight: bold;
+    font-size: clamp(5rem, 6.8vw, 10rem);
 }
