@@ -35,11 +35,11 @@ window.addEventListener("resize", () => {
 const word = document.querySelector(".text-bold");
 const wordArray = [
     "adventure",
-    "picture",
     "design",
     "animation",
     "creation",
     "mix",
+    "PiCTURE",
 ];
 
 let count = 0;
