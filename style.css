@@ -389,7 +389,7 @@ main {
     display: grid;
     gap: 1.6vw;
 
-    grid-template-columns: repeat(2, minmax(40%, 1fr));
+    grid-template-columns: repeat(2, minmax(1fr, 25vw));
 
     /* grid-template-areas:
         "tile1 tile2"
