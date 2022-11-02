@@ -56,6 +56,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -302,7 +303,8 @@ header {
 
         transition: 1s all ease;
 
-        background-color: var(--color-dark-blue);
+        /* background-color: var(--color-dark-blue); */
+        background-color: hsl(214, 38%, 28%, 0.8);
     }
 
     .sub__item,
@@ -330,7 +332,7 @@ header {
     }
 
     .nav__item-portfolio:hover > .portfolio-nav-sub {
-        height: 66.5rem;
+        height: 58.6rem;
     }
 
     .nav-sub-sub {
@@ -383,9 +385,9 @@ main {
 
 .hero {
     width: 100%;
-    height: calc(100vh - 16rem);
+    height: calc(100vh - 13rem);
 
-    background-image: url("./assets/FOTO_NA_GLOWNA.jpeg");
+    background-image: url("./assets/photos-main/FOTO_NA_GLOWNA.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -438,6 +440,8 @@ main {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    /* box-shadow: 0 0 0 10px black; */
 }
 
 .portfolio-grid-tile:hover .tile-link {
@@ -465,36 +469,36 @@ main {
 
 .tile1 {
     grid-area: tile1;
-    background-image: url("./assets/photos/banan/banan.jpg");
+    background-image: url("./assets/photos-main/DSC07086.jpg");
 }
 .tile2 {
     height: auto;
     grid-area: tile2;
-    background-image: url("./assets/photos/czekIt/czekit.jpg");
+    background-image: url("./assets/photos-main/1.jpg");
 }
 .tile3 {
     grid-area: tile3;
-    background-image: url("./assets/photos/dentify/dentify.jpg");
+    background-image: url("./assets/photos-main/DSC03060.jpg");
 }
 .tile4 {
     grid-area: tile4;
-    background-image: url("./assets/photos/falk/falk.jpg");
+    background-image: url("./assets/photos-main/DSC00403.jpg");
 }
 .tile5 {
     grid-area: tile5;
-    background-image: url("./assets/photos/kia_korczyk/kia_korczyk.jpg");
+    background-image: url("./assets/photos-main/MS_05860.jpg");
 }
 .tile6 {
     grid-area: tile6;
-    background-image: url("./assets/photos/mercedes_benz/mercedes_benz.jpg");
+    background-image: url("./assets/photos-main/DSC06825.jpg");
 }
 .tile7 {
     grid-area: tile7;
-    background-image: url("./assets/photos/my_clinic/my_clinic.jpg");
+    background-image: url("./assets/photos-main/DSC04298.jpg");
 }
 .tile8 {
     grid-area: tile8;
-    background-image: url("./assets/photos/sesja_biznesowa/sesja_biznesowa.jpg");
+    background-image: url("./assets/photos-main/DSC08305.jpg");
 }
 
 .tile-link {
@@ -564,7 +568,7 @@ main {
         grid-template-areas:
             "tile1 tile2 tile2"
             "tile3 tile2 tile2"
-            "tile5 tile6 ."
+            "tile5 tile6 tile6"
             "tile4 tile4 tile4"
             "tile4 tile4 tile4"
             "tile4 tile4 tile4"
@@ -594,12 +598,18 @@ footer {
         height: 5rem;
 
         position: fixed;
-        bottom: 8rem;
+        bottom: 4rem;
         right: 4rem;
         z-index: 9;
 
         background-color: hsl(0, 0%, 99%);
-        border: 2px solid var(--color-dark-blue);
+        border: 2px solid var(--color-light-blue);
+
+        opacity: 0.5;
+    }
+
+    .back:hover {
+        border-color: var(--color-dark-blue);
     }
 
     .back-link {
@@ -611,5 +621,10 @@ footer {
 
     .back-link > svg {
         width: 1.7rem;
+        fill: var(--color-light-blue);
+    }
+
+    .back:hover .back-link > svg {
+        fill: var(--color-dark-blue);
     }
 }
