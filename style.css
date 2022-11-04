@@ -397,6 +397,7 @@ main {
     gap: 2rem;
 
     margin-bottom: 4rem;
+    position: relative;
 }
 
 .hero__text {
@@ -627,4 +628,34 @@ footer {
     .back:hover .back-link > svg {
         fill: var(--color-dark-blue);
     }
+}
+/* 
+.hero::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3%;
+    z-index: 9;
+
+    background-image: linear-gradient(to top, white, transparent);
+} */
+
+.fog {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3%;
+    z-index: 9;
+
+    background-image: linear-gradient(to top, white, transparent);
+    transition: all 0.4s ease;
+}
+
+.fog-on {
+    height: 90%;
 }

@@ -74,6 +74,7 @@ body {
 
 header {
     padding: 3rem 2vw;
+    margin-bottom: 5rem;
 
     justify-content: space-between;
     align-items: center;
@@ -366,11 +367,11 @@ header {
     }
 }
 
-/* ! PORTFOLIO GRID */
+/*! MAIN / GRID  */
 
 main {
-    padding: 2rem 2vw;
-    /* padding-bottom: 3rem; */
+    padding: 0 var(--padding-mobile-frame);
+    padding-bottom: 3rem;
 }
 
 @media (min-width: 900px) {
@@ -380,52 +381,172 @@ main {
     }
 }
 
+/* ? Main portfolio grid */
+
 .portfolio-grid {
-    margin-top: 6rem;
     width: 100%;
+    min-height: 100vh;
+
     display: grid;
-    grid-template-columns: 1, 1fr;
+
+    grid-template-rows: repeat(6, calc((100vw - 4vw - 1.6vw) / 2));
+    grid-template-areas:
+        "tile1 tile2"
+        "tile3 tile2"
+        "tile4 tile4"
+        "tile4 tile4"
+        "tile5 tile6"
+        "tile7 tile8";
 
     gap: 1.6rem;
+    background-color: hsl(0, 0%, 100%);
+    padding: 0.2rem;
+
+    box-shadow: 0 0 6rem 2rem hsl(0, 0%, 100%);
 }
 
-.portfolio-grid img {
-    object-fit: cover;
+.portfolio-grid-tile {
+    /* aspect-ratio: 1; */
+    position: relative;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* box-shadow: 0 0 0 10px black; */
+}
+
+.portfolio-grid-tile:hover .tile-link {
+    opacity: 1;
+}
+
+.portfolio-grid-tile:hover .tile-link::before {
+    width: 50%;
+    height: 2px;
+}
+
+.portfolio-grid-tile:hover .img-title {
+    top: 0;
+}
+
+.portfolio-grid-tile:hover .img-comment {
+    bottom: 0;
+}
+
+.portfolio-grid-tile:hover .tile-link::before,
+.portfolio-grid-tile:hover .img-title,
+.portfolio-grid-tile:hover .img-comment {
+    opacity: 1;
+}
+
+.tile1 {
+    grid-area: tile1;
+    background-image: url("../assets/photos-main/DSC07086.jpg");
+}
+.tile2 {
+    height: auto;
+    grid-area: tile2;
+    background-image: url("../assets/photos-main/1.jpg");
+}
+.tile3 {
+    grid-area: tile3;
+    background-image: url("../assets/photos-main/DSC03060.jpg");
+}
+.tile4 {
+    grid-area: tile4;
+    background-image: url("../assets/photos-main/DSC00403.jpg");
+}
+.tile5 {
+    grid-area: tile5;
+    background-image: url("../assets/photos-main/MS_05860.jpg");
+}
+.tile6 {
+    grid-area: tile6;
+    background-image: url("../assets/photos-main/DSC06825.jpg");
+}
+.tile7 {
+    grid-area: tile7;
+    background-image: url("../assets/photos-main/DSC04298.jpg");
+}
+.tile8 {
+    grid-area: tile8;
+    background-image: url("../assets/photos-main/DSC08305.jpg");
+}
+
+.tile-link {
+    /* display: none; */
+
+    text-decoration: none;
+    color: var(--color-dark-blue);
+    background-color: hsl(0, 0%, 100%, 0.8);
+
+    position: absolute;
+
     width: 100%;
-    /* box-shadow: 0 0 0 0.8rem black; */
-    cursor: pointer;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    flex-direction: column;
+    gap: 3.4rem;
+
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    opacity: 0;
 }
 
-/* .teleport {
-    display: none;
-} */
+.tile-link::before {
+    content: "";
+    display: block;
 
-/* ! TELEPORT */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
 
-/* .teleport {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 99;
+    transform: translateX(-50%);
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    background-color: var(--color-dark-blue);
+}
+
+.img-title {
+    text-transform: capitalize;
+    /* font-weight: bold; */
+    font-size: 1.8rem;
+
+    position: relative;
+    top: -4rem;
+}
+
+.img-comment {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+    position: relative;
+    bottom: -4rem;
+}
+.tile-link::before,
+.img-title,
+.img-comment {
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+@media (min-width: 900px) {
+    .portfolio-grid {
+        grid-template-rows: repeat(7, calc((100vw - 44vw - 3.2vw) / 3));
+        grid-template-areas:
+            "tile1 tile2 tile2"
+            "tile3 tile2 tile2"
+            "tile5 tile6 tile6"
+            "tile4 tile4 tile4"
+            "tile4 tile4 tile4"
+            "tile4 tile4 tile4"
+            "tile7 tile8 .";
     }
-
-    .teleport > figure {
-        width: 65vw;
-        position: relative;
-        top: 50%;
-        left: 0;
-    }
-
-    .teleport-img {
-        object-fit: cover;
-        width: 100%;
-    } */
+}
 
 /* ! . . . : : : [ FOOTER ] : : : . . .  */
 
