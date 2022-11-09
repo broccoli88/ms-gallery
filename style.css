@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
 :root {
     /* COLORS */
 
-    --color-bg: hsl(220, 13%, 95%);
+    --color-bg: hsl(0, 0%, 100%);
     --color-dark-blue: hsl(214, 38%, 28%);
     --color-light-blue: hsl(210, 36%, 77%);
     --color-light-blue-hover: hsl(210, 36%, 77%, 0.6);
@@ -25,7 +27,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Archia", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .flex {
@@ -67,7 +69,7 @@ body {
     line-height: 1.5;
     color: var(--color-font-regular);
 
-    background-color: hsl(0, 0%, 99%);
+    background-color: var(--color-bg);
 }
 
 /* ! . . . : : : [ HEADER ] : : : . . .  */
@@ -205,6 +207,7 @@ header {
 .media {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -248,10 +251,17 @@ header {
         padding: 0;
     }
 
+    .nav__item:last-child .media {
+        position: relative;
+        top: 3px;
+        padding: 0.5em 2em;
+    }
+
     .nav__link {
-        padding: 0.5em 2.5em;
+        padding: 0.5em 2em;
         color: var(--color-light-blue);
         position: relative;
+        font-weight: 600;
     }
 
     .unwrap::before {
@@ -296,7 +306,7 @@ header {
         position: absolute;
         top: 4rem;
         left: 0;
-        width: 100%;
+        width: 120%;
         height: 0;
 
         overflow-y: clip;
@@ -595,18 +605,17 @@ footer {
 
 @media (min-width: 900px) {
     .back {
-        width: 4rem;
-        height: 5rem;
+        width: 3.6rem;
+        height: 4.6rem;
 
         position: fixed;
         bottom: 4rem;
         right: 4rem;
         z-index: 9;
 
-        background-color: hsl(0, 0%, 99%);
-        border: 2px solid var(--color-light-blue);
+        border: 1px solid var(--color-light-blue);
 
-        opacity: 0.5;
+        opacity: 0.8;
     }
 
     .back:hover {
@@ -620,12 +629,11 @@ footer {
         text-decoration: none;
     }
 
-    .back-link > svg {
-        width: 1.7rem;
+    #vector {
         fill: var(--color-light-blue);
     }
 
-    .back:hover .back-link > svg {
+    .back:hover #vector {
         fill: var(--color-dark-blue);
     }
 }
