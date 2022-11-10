@@ -1,21 +1,27 @@
 // ! NAVBAR
 
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
 const navbar = document.querySelector(".navbar");
 const openMenuIcon = document.querySelector(".menu");
 const closeMenuIcon = document.querySelector(".close-icon");
-const fog = document.querySelector(".fog");
+const hero = document.querySelector(".hero");
 
 function openNav() {
     if (!navbar.classList.contains("navbar-opened")) {
         navbar.classList.add("navbar-opened");
-        fog.classList.add("fog-off");
+        main.classList.add("display-none");
+        hero.classList.add("display-none");
+        footer.classList.add("display-none");
     }
 }
 
 function closeNav() {
     if (navbar.classList.contains("navbar-opened")) {
         navbar.classList.remove("navbar-opened");
-        fog.classList.remove("fog-off");
+        main.classList.remove("display-none");
+        hero.classList.remove("display-none");
+        footer.classList.remove("display-none");
     }
 }
 
@@ -35,7 +41,6 @@ window.addEventListener("resize", () => {
 
 // ! HERO - intersection observer
 
-const hero = document.querySelector(".hero");
 const grid = document.querySelector(".portfolio-grid");
 
 const options = {
@@ -46,7 +51,6 @@ const options = {
 
 let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-        const fog = document.querySelector(".fog");
         if (!entry.isIntersecting) {
             hero.style.opacity = "0.3";
             grid.classList.remove("portfolio-grid-fade");
@@ -54,7 +58,6 @@ let observer = new IntersectionObserver((entries, observer) => {
 
         if (entry.isIntersecting) {
             hero.style.opacity = "1";
-
             grid.classList.add("portfolio-grid-fade");
         }
     });

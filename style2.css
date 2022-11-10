@@ -56,6 +56,10 @@
     grid-column: span 2;
 }
 
+.display-none {
+    display: none;
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -266,6 +270,10 @@ header {
         color: var(--color-light-blue);
         position: relative;
         font-weight: 600;
+    }
+
+    .media-nav {
+        display: flex;
     }
 
     .unwrap::before {
@@ -625,8 +633,13 @@ footer {
 
 /* ! . . . : : : [ BACK TO TOP ] : : : . . .  */
 
+.back {
+    display: none;
+}
+
 @media (min-width: 900px) {
     .back {
+        display: initial;
         width: 3.6rem;
         height: 4.6rem;
 
@@ -658,38 +671,4 @@ footer {
     .back:hover #vector {
         fill: var(--color-dark-blue);
     }
-}
-/* 
-.hero::before {
-    content: "";
-    display: block;
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3%;
-    z-index: 9;
-
-    background-image: linear-gradient(to top, white, transparent);
-} */
-
-.fog {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3%;
-    z-index: 2;
-
-    background-image: linear-gradient(to top, white, transparent);
-    transition: all 0.4s ease;
-}
-
-.fog-on {
-    height: 90%;
-}
-
-.fog-off {
-    display: none;
 }
