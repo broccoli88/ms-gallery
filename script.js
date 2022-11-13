@@ -45,7 +45,7 @@ const grid = document.querySelector(".portfolio-grid");
 
 const options = {
     root: document.querySelector(".body"),
-    rootMargin: "-125px 0px 0px 0px",
+    rootMargin: "0px 0px 0px 0px",
     threshold: 1.0,
 };
 
