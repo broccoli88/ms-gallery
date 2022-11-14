@@ -86,7 +86,7 @@ header {
 
     position: relative;
 
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--color-bg);
 }
 
 .logo {
@@ -439,6 +439,8 @@ main {
 /* ? Main portfolio grid */
 
 .portfolio-grid {
+    background-color: var(--color-bg);
+
     display: grid;
 
     width: 100%;
