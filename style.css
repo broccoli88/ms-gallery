@@ -74,6 +74,8 @@ body {
     color: var(--color-font-regular);
 
     background-color: var(--color-bg);
+
+    overflow-x: hidden;
 }
 
 /* ! . . . : : : [ HEADER ] : : : . . .  */
@@ -85,8 +87,6 @@ header {
     align-items: center;
 
     position: relative;
-
-    background-color: var(--color-bg);
 }
 
 .logo {
@@ -439,8 +439,6 @@ main {
 /* ? Main portfolio grid */
 
 .portfolio-grid {
-    background-color: var(--color-bg);
-
     display: grid;
 
     width: 100%;
@@ -469,7 +467,7 @@ main {
 
 .portfolio-grid-fade {
     opacity: 0;
-    top: 0;
+    top: 0px;
 }
 
 .portfolio-grid-tile {
