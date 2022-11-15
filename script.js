@@ -42,25 +42,26 @@ window.addEventListener("resize", () => {
 // ! HERO - intersection observer
 
 const grid = document.querySelector(".portfolio-grid");
+const header = document.querySelector("header");
 
 const options = {
-    root: document.querySelector(".body"),
-    rootMargin: "0px 0px 0px 0px",
-    threshold: 1,
+    // root: ,
+    rootMargin: "0px",
+    threshold: 1.0,
 };
 
-let observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) {
             hero.style.opacity = "0.3";
-            // grid.classList.remove("portfolio-grid-fade");
+            grid.classList.remove("portfolio-grid-fade");
         }
 
         if (entry.isIntersecting) {
             hero.style.opacity = "1";
-            // grid.classList.add("portfolio-grid-fade");
+            grid.classList.add("portfolio-grid-fade");
         }
     });
 }, options);
 
-observer.observe(hero);
+observer.observe(header);
