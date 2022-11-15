@@ -47,7 +47,7 @@ const header = document.querySelector("header");
 const options = {
     // root: ,
     rootMargin: "0px",
-    threshold: 1.0,
+    threshold: 0.1,
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
