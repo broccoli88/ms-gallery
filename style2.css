@@ -219,7 +219,8 @@ header {
     display: none;
 }
 
-.media a > svg {
+.media a > svg,
+.media-nav a > svg {
     width: 18px;
     height: 18px;
 
@@ -228,7 +229,8 @@ header {
     cursor: pointer;
 }
 
-.media a > svg:hover {
+.media a > svg:hover,
+.media-nav a > svg:hover {
     fill: var(--color-light-blue);
 }
 
@@ -259,9 +261,11 @@ header {
         padding: 0;
     }
 
-    .nav__item:last-child .media {
-        position: relative;
+    .nav__item:last-child .media-nav {
+        position: absolute;
         top: 3px;
+        width: fit-content;
+        height: 100%;
         padding: 0.5em 2em;
     }
 
@@ -274,6 +278,13 @@ header {
 
     .media-nav {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        position: absolute;
+        top: 10rem;
+        right: 4.2rem;
     }
 
     .unwrap::before {

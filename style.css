@@ -167,7 +167,7 @@ header {
 .navbar {
     display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 
     position: absolute;
     top: 0;
@@ -190,7 +190,7 @@ header {
     text-transform: capitalize;
     font-size: 1.7rem;
 
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .nav__item {
@@ -206,6 +206,7 @@ header {
     /* color: var(--color-light-grey); */
     color: var(--color-light-blue-hover);
     text-align: center;
+    text-transform: uppercase;
 
     padding: 2.1em 10%;
 }
@@ -262,8 +263,9 @@ header {
     .nav {
         flex: 1;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         padding: 0;
+        gap: 6rem;
     }
 
     .nav__item:last-child .media {
