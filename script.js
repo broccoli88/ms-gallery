@@ -47,7 +47,7 @@ const header = document.querySelector("header");
 const options = {
     // root: ,
     rootMargin: "0px",
-    threshold: 0.7,
+    threshold: 0.98,
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
@@ -55,13 +55,15 @@ const observer = new IntersectionObserver((entries, observer) => {
         if (!entry.isIntersecting) {
             hero.style.opacity = "0.3";
             grid.classList.remove("portfolio-grid-fade");
+            header.classList.add("header-scroll");
         }
 
         if (entry.isIntersecting) {
             hero.style.opacity = "1";
             grid.classList.add("portfolio-grid-fade");
+            header.classList.remove("header-scroll");
         }
     });
 }, options);
 
-observer.observe(header);
+observer.observe(hero);

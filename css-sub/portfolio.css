@@ -389,7 +389,7 @@ main {
 
     display: grid;
 
-    grid-template-rows: repeat(6, calc((100vw - 4vw - 1.6vw) / 2));
+    grid-template-rows: repeat(auto, calc((100vw - 4vw - 1.6vw) / 2));
     grid-template-areas:
         "tile1 tile2"
         "tile3 tile2"
