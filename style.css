@@ -192,6 +192,7 @@ header {
 
 .navbar-opened {
     display: flex;
+    justify-content: space-around;
 }
 
 .nav {
@@ -231,10 +232,6 @@ header {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-}
-
-.media-nav {
-    display: none;
 }
 
 .media a > svg {
@@ -337,6 +334,8 @@ header {
         left: 0;
         width: 120%;
         height: 0;
+
+        text-transform: uppercase;
 
         overflow-y: clip;
 
